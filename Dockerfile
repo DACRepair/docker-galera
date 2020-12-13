@@ -7,11 +7,7 @@ RUN chown -R mysql:mysql /etc/mysql/conf.d
 # call from the upstream entrypoint
 COPY galera.sh /usr/local/sbin/mysqld
 
-ENV MYSQL_ROOT_PASSWORD="mariadb" \
-	MYSQL_USER="mariadb" \
-	MYSQL_PASSWORD="mariadb" \
-	MYSQL_DATABASE="data" \
-	MYSQL_MAX_CONNECTIONS="256" \
+ENV MYSQL_MAX_CONNECTIONS="256" \
 	MYSQL_MAX_STATEMENT_TIME="60" \
 	MYSQL_MAX_ALLOWED_PACKET="16M" \
 	MYSQL_QUERY_CACHE_LIMIT="128K" \
